@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
@@ -298,6 +299,7 @@ export default function App() {
       <main className="flex-1 flex flex-col overflow-hidden">
         {renderPage()}
       </main>
+      <Analytics />
     </div>
   );
 }
