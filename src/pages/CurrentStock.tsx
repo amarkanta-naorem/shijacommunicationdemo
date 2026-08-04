@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import { Search, AlertTriangle, TrendingUp } from 'lucide-react';
+import { Search, AlertTriangle, TrendingUp, ShieldCheck } from 'lucide-react';
 import Header from '../components/Header';
 import Badge from '../components/Badge';
 import { products } from '../data/mockData';
+
+function warrantyStatus(p: any) {
+  const w = p.warranty;
+  if (!w || (!w.durationMonths && !w.durationYears)) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  const end = w.extendedUntil && w.isExtended ? w.extendedUntil : w.endDate;
+  if (end && end < today) return { active: false, end };
+  return { active: true, end };
+}
 
 export default function CurrentStock() {
   const [search, setSearch] = useState('');
@@ -59,10 +68,18 @@ export default function CurrentStock() {
                     const isLow = p.currentStock < p.minStock;
                     const isCritical = p.currentStock <= 1;
                     return (
-                      <tr key={p.id} className="border-t hover:bg-blue-50/30" style={{ borderColor: '#F1F5F9' }}>
+<tr key={p.id} className="border-t hover:bg-blue-50/30" style={{ borderColor: '#F1F5F9' }}>
                         <td className="px-3 py-3 font-mono" style={{ color: '#64748B' }}>{p.sku}</td>
                         <td className="px-3 py-3">
-                          <div className="font-medium" style={{ color: '#0F172A' }}>{p.name}</div>
+                          <div className="flex items-center gap-1.5">
+                            <div className="font-medium" style={{ color: '#0F172A' }}>{p.name}</div>
+                            {warrantyStatus(p) && (
+                              <span title={`Warranty ${warrantyStatus(p)!.active ? 'active' : 'expired'} — ends ${warrantyStatus(p)!.end}`}
+                                style={{ color: warrantyStatus(p)!.active ? '#16A34A' : '#DC2626', display: 'inline-flex' }}>
+                                <ShieldCheck size={12} />
+                              </span>
+                            )}
+                          </div>
                           <div className="flex items-center gap-1 mt-0.5">
                             {isCritical && <AlertTriangle size={10} style={{ color: '#DC2626' }} />}
                             {isCritical && <span className="text-xs" style={{ color: '#DC2626' }}>Critical</span>}

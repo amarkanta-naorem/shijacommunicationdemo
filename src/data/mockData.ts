@@ -1,15 +1,5 @@
-export const products = [
-  { id: 'P001', name: 'Oil Filter - Mahindra 25kVA', category: 'PM', sku: 'OFL-M25', unit: 'Pcs', currentStock: 12, minStock: 5, unitPrice: 450, supplier: 'Mahindra', location: 'Rack A-1' },
-  { id: 'P002', name: 'Fuel Filter - TMTL 30kVA', category: 'PM', sku: 'FFL-T30', unit: 'Pcs', currentStock: 3, minStock: 4, unitPrice: 380, supplier: 'TMTL', location: 'Rack A-2' },
-  { id: 'P003', name: 'Air Filter - Universal', category: 'PM', sku: 'AFL-UNI', unit: 'Pcs', currentStock: 8, minStock: 5, unitPrice: 620, supplier: 'Mahindra', location: 'Rack B-1' },
-  { id: 'P004', name: 'Engine Oil 15W40 - 5L', category: 'CM', sku: 'EOL-15W', unit: 'Litre', currentStock: 45, minStock: 20, unitPrice: 320, supplier: 'TMTL', location: 'Store-A' },
-  { id: 'P005', name: 'Battery 12V 150Ah', category: 'CM', sku: 'BAT-12V', unit: 'Pcs', currentStock: 2, minStock: 2, unitPrice: 8500, supplier: 'Mahindra', location: 'Rack C-1' },
-  { id: 'P006', name: 'V-Belt Set - 3PK885', category: 'PM', sku: 'VBL-3PK', unit: 'Set', currentStock: 6, minStock: 3, unitPrice: 750, supplier: 'TMTL', location: 'Rack A-3' },
-  { id: 'P007', name: 'Coolant - 5L', category: 'CM', sku: 'CLT-5L', unit: 'Litre', currentStock: 18, minStock: 10, unitPrice: 180, supplier: 'Mahindra', location: 'Store-A' },
-  { id: 'P008', name: 'Radiator Cap', category: 'CM', sku: 'RAD-CAP', unit: 'Pcs', currentStock: 4, minStock: 3, unitPrice: 250, supplier: 'TMTL', location: 'Rack B-2' },
-  { id: 'P009', name: 'Alternator Belt', category: 'PM', sku: 'ALT-BLT', unit: 'Pcs', currentStock: 1, minStock: 2, unitPrice: 1100, supplier: 'Mahindra', location: 'Rack A-4' },
-  { id: 'P010', name: 'Glow Plug Set', category: 'CM', sku: 'GPL-SET', unit: 'Set', currentStock: 7, minStock: 4, unitPrice: 2200, supplier: 'TMTL', location: 'Rack C-2' },
-];
+export { products } from './productData';
+export type { Product } from '../types/product';
 
 export const stockInTransactions = [
   { id: 'SI-2025-001', date: '2025-07-28', product: 'Oil Filter - Mahindra 25kVA', sku: 'OFL-M25', qty: 20, unitPrice: 450, total: 9000, supplier: 'Mahindra', invoiceNo: 'INV-MH-4521', receivedBy: 'Rajesh Kumar', status: 'Completed' },

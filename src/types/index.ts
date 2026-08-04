@@ -1,0 +1,1 @@
+export type { Product, WarrantyTerms, WarrantyCoverage, GSTDetails, CreditTerms, ImmediatePayment, PricingStructure, QuantityBreak, PayoutSchedule, FuelWastageRecord, FuelWastageCalculation, HardwareDamage, DamageType, WastageReason } from './product';

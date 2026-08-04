@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import { Search, AlertTriangle, PackagePlus, Package, MoreHorizontal } from 'lucide-react';
+import { Search, AlertTriangle, PackagePlus, Package, MoreHorizontal, ShieldCheck } from 'lucide-react';
 import Header from '../components/Header';
 import Badge, { statusBadge } from '../components/Badge';
 import { products, suppliers } from '../data/mockData';
+
+function warrantyStatus(p: any) {
+  const w = p.warranty;
+  if (!w || (!w.durationMonths && !w.durationYears)) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  const end = w.extendedUntil && w.isExtended ? w.extendedUntil : w.endDate;
+  if (end && end < today) return { active: false, end };
+  return { active: true, end };
+}
 
 export default function LowStock() {
   const [search, setSearch] = useState('');
@@ -57,7 +66,7 @@ export default function LowStock() {
           <div className="bg-white rounded-xl border" style={{ borderColor: '#E2E8F0' }}>
             {/* Filters */}
             <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b" style={{ borderColor: '#F1F5F9' }}>
-              <div className="flex items-center gap-2 flex-1 min-w-[200px] rounded-lg px-3 py-2 border" style={{ borderColor: '#E2E8F0', background: '#F8FAFC' }}>
+              <div className="flex items-center gap-2 flex-1 min-w-50 rounded-lg px-3 py-2 border" style={{ borderColor: '#E2E8F0', background: '#F8FAFC' }}>
                 <Search size={14} style={{ color: '#94A3B8' }} />
                 <input value={search} onChange={e => setSearch(e.target.value)}
                   placeholder="Search product or Part Number..." className="bg-transparent text-sm outline-none flex-1" />
@@ -91,7 +100,15 @@ export default function LowStock() {
                       <tr key={p.id} className="border-t hover:bg-blue-50/30" style={{ borderColor: '#F1F5F9' }}>
                         <td className="px-3 py-3 font-mono" style={{ color: '#64748B' }}>{p.sku}</td>
                         <td className="px-3 py-3">
-                          <div className="font-medium" style={{ color: '#0F172A' }}>{p.name}</div>
+                          <div className="flex items-center gap-1.5">
+                            <div className="font-medium" style={{ color: '#0F172A' }}>{p.name}</div>
+                            {warrantyStatus(p) && (
+                              <span title={`Warranty ${warrantyStatus(p)!.active ? 'active' : 'expired'} — ends ${warrantyStatus(p)!.end}`}
+                                style={{ color: warrantyStatus(p)!.active ? '#16A34A' : '#DC2626', display: 'inline-flex' }}>
+                                <ShieldCheck size={12} />
+                              </span>
+                            )}
+                          </div>
                         </td>
                         <td className="px-3 py-3" style={{ color: '#475569' }}>{p.supplier}</td>
                         <td className="px-3 py-3">

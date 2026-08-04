@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Droplets, TrendingDown, AlertTriangle, ArrowDownToLine, ArrowUpFromLine, RefreshCw } from 'lucide-react';
+import { Droplets, TrendingDown, AlertTriangle, ArrowDownToLine, ArrowUpFromLine, RefreshCw, Clock } from 'lucide-react';
 import Header from '../components/Header';
 import Badge from '../components/Badge';
 import { fuelStock, fuelTransactions } from '../data/mockData';
@@ -10,6 +10,7 @@ interface Props {
 
 export default function FuelStock({ fuel }: Props) {
   const [search, setSearch] = useState('');
+  const [activeTab, setActiveTab] = useState<'transactions' | 'wastage'>('transactions');
   const tank = fuelStock.find(f => f.id === fuel)!;
   const pct = Math.min(100, (tank.currentStock / tank.tankCapacity) * 100);
   const pctOfReorder = (tank.currentStock / tank.reorderLevel) * 100;
@@ -162,42 +163,115 @@ export default function FuelStock({ fuel }: Props) {
             </div>
           </div>
 
-          {/* Recent transactions for this fuel */}
-          <div className="bg-white rounded-xl border" style={{ borderColor: '#E2E8F0' }}>
-            <div className="px-5 py-4 border-b flex items-center justify-between" style={{ borderColor: '#F1F5F9' }}>
-              <div className="text-sm font-semibold" style={{ color: '#0F172A' }}>Recent {tank.name} Transactions</div>
-              <div className="text-xs" style={{ color: '#94A3B8' }}>Last updated {tank.lastUpdated}</div>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr style={{ background: '#F8FAFC' }}>
-                    {['ID', 'Type', 'Date', 'Quantity', 'Party', 'Machine / Ref', 'Balance After', 'Remarks'].map(h => (
-                      <th key={h} className="px-3 py-3 text-left font-semibold whitespace-nowrap" style={{ color: '#64748B' }}>{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {txns.map(t => (
-                    <tr key={t.id} className="border-t hover:bg-blue-50/30" style={{ borderColor: '#F1F5F9' }}>
-                      <td className="px-3 py-3 font-mono" style={{ color: '#2563EB' }}>{t.id}</td>
-                      <td className="px-3 py-3">
-                        <Badge label={t.type === 'in' ? 'Fuel In' : 'Fuel Out'} variant={t.type === 'in' ? 'success' : 'purple'} />
-                      </td>
-                      <td className="px-3 py-3" style={{ color: '#475569' }}>{t.date}</td>
-                      <td className="px-3 py-3 font-semibold" style={{ color: t.type === 'in' ? '#16A34A' : '#7C3AED' }}>
-                        {t.type === 'in' ? `+${(t as any).actualQty}L` : `-${(t as any).qty}L`}
-                      </td>
-                      <td className="px-3 py-3" style={{ color: '#475569' }}>{t.type === 'in' ? (t as any).supplier : (t as any).issuedTo}</td>
-                      <td className="px-3 py-3 font-mono" style={{ color: '#64748B' }}>{t.type === 'in' ? (t as any).invoiceNo : (t as any).machine || (t as any).department}</td>
-                      <td className="px-3 py-3 font-semibold" style={{ color: '#0F172A' }}>{t.type === 'in' ? `${(t as any).tankAfter}L` : `${(t as any).stockAfter}L`}</td>
-                      <td className="px-3 py-3" style={{ color: '#94A3B8' }}>{(t as any).remarks || '—'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          {/* Tab toggle */}
+          <div className="flex items-center gap-2 mb-4">
+            <button onClick={() => setActiveTab('transactions')}
+              className="text-xs px-3 py-1.5 rounded-lg font-medium"
+              style={{ background: activeTab === 'transactions' ? '#2563EB' : '#F1F5F9', color: activeTab === 'transactions' ? 'white' : '#64748B' }}>
+              Transactions
+            </button>
+            <button onClick={() => setActiveTab('wastage')}
+              className="text-xs px-3 py-1.5 rounded-lg font-medium"
+              style={{ background: activeTab === 'wastage' ? '#2563EB' : '#F1F5F9', color: activeTab === 'wastage' ? 'white' : '#64748B' }}>
+              <Clock size={12} style={{ display: 'inline', marginRight: 4 }} />Wastage
+            </button>
           </div>
+
+          {activeTab === 'wastage' ? (
+            <div className="bg-white rounded-xl border p-6" style={{ borderColor: '#E2E8F0' }}>
+              <div className="text-sm font-semibold mb-4" style={{ color: '#0F172A' }}>Fuel Wastage Records — {tank.name}</div>
+              <div className="text-xs" style={{ color: '#94A3B8' }}>
+                Track fuel loss quantities as inventory deductions. Record spillage, evaporation, meter errors, and other wastage reasons.
+              </div>
+              <div className="mt-4 p-4 rounded-lg" style={{ background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <div className="text-xs" style={{ color: '#94A3B8' }}>Total Fuel Received</div>
+                    <div className="text-sm font-bold" style={{ color: '#0F172A' }}>
+                      {fuelTransactions.filter(t => t.type === 'in' && t.fuelType.toLowerCase() === (fuel === 'diesel' ? 'diesel' : 's/k')).reduce((s, t) => s + (t as any).actualQty, 0)}L
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs" style={{ color: '#94A3B8' }}>Total Fuel Issued</div>
+<div className="text-sm font-bold" style={{ color: '#0F172A' }}>
+                      {fuelTransactions.filter(t => t.type === 'out' && t.fuelType.toLowerCase() === (fuel === 'diesel' ? 'diesel' : 's/k')).reduce((s, t) => s + (t.qty || 0), 0)}L
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs" style={{ color: '#94A3B8' }}>Total Loss</div>
+                    <div className="text-sm font-bold" style={{ color: '#DC2626' }}>
+                      {fuelTransactions.filter(t => t.type === 'in' && t.fuelType.toLowerCase() === (fuel === 'diesel' ? 'diesel' : 's/k')).reduce((s, t) => s + (t as any).lossQty, 0)}L
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#64748B' }}>Loss Quantity Breakdown</div>
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr style={{ background: '#F8FAFC' }}>
+                      {['ID', 'Date', 'Qty (L)', 'Loss (L)', 'Reason', 'Reported By', 'Approved', 'Status'].map(h => (
+                        <th key={h} className="px-3 py-2 text-left font-semibold" style={{ color: '#64748B' }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {fuelTransactions.filter(t => t.type === 'in' && t.fuelType.toLowerCase() === (fuel === 'diesel' ? 'diesel' : 's/k')).map(t => (
+                      <tr key={t.id} className="border-t" style={{ borderColor: '#F1F5F9' }}>
+                        <td className="px-3 py-2 font-mono" style={{ color: '#2563EB' }}>{t.id}</td>
+                        <td className="px-3 py-2" style={{ color: '#475569' }}>{t.date}</td>
+                        <td className="px-3 py-2 font-semibold" style={{ color: '#0F172A' }}>{(t as any).actualQty}L</td>
+                        <td className="px-3 py-2 font-semibold" style={{ color: '#DC2626' }}>{(t as any).lossQty}L</td>
+                        <td className="px-3 py-2" style={{ color: '#475569' }}>{(t as any).remarks || '—'}</td>
+                        <td className="px-3 py-2" style={{ color: '#475569' }}>{t.receivedBy}</td>
+                        <td className="px-3 py-2"><Badge label="Approved" variant="success" /></td>
+                        <td className="px-3 py-2"><Badge label="Recorded" variant="info" /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Recent transactions for this fuel */}
+              <div className="bg-white rounded-xl border" style={{ borderColor: '#E2E8F0' }}>
+                <div className="px-5 py-4 border-b flex items-center justify-between" style={{ borderColor: '#F1F5F9' }}>
+                  <div className="text-sm font-semibold" style={{ color: '#0F172A' }}>Recent {tank.name} Transactions</div>
+                  <div className="text-xs" style={{ color: '#94A3B8' }}>Last updated {tank.lastUpdated}</div>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs">
+                    <thead>
+                      <tr style={{ background: '#F8FAFC' }}>
+                        {['ID', 'Type', 'Date', 'Quantity', 'Party', 'Machine / Ref', 'Balance After', 'Remarks'].map(h => (
+                          <th key={h} className="px-3 py-3 text-left font-semibold whitespace-nowrap" style={{ color: '#64748B' }}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {txns.map(t => (
+                        <tr key={t.id} className="border-t hover:bg-blue-50/30" style={{ borderColor: '#F1F5F9' }}>
+                          <td className="px-3 py-3 font-mono" style={{ color: '#2563EB' }}>{t.id}</td>
+                          <td className="px-3 py-3">
+                            <Badge label={t.type === 'in' ? 'Fuel In' : 'Fuel Out'} variant={t.type === 'in' ? 'success' : 'purple'} />
+                          </td>
+                          <td className="px-3 py-3" style={{ color: '#475569' }}>{t.date}</td>
+                          <td className="px-3 py-3 font-semibold" style={{ color: t.type === 'in' ? '#16A34A' : '#7C3AED' }}>
+                            {t.type === 'in' ? `+${(t as any).actualQty}L` : `-${(t as any).qty}L`}
+                          </td>
+                          <td className="px-3 py-3" style={{ color: '#475569' }}>{t.type === 'in' ? (t as any).supplier : (t as any).issuedTo}</td>
+                          <td className="px-3 py-3 font-mono" style={{ color: '#64748B' }}>{t.type === 'in' ? (t as any).invoiceNo : (t as any).machine || (t as any).department}</td>
+                          <td className="px-3 py-3 font-semibold" style={{ color: '#0F172A' }}>{t.type === 'in' ? `${(t as any).tankAfter}L` : `${(t as any).stockAfter}L`}</td>
+                          <td className="px-3 py-3" style={{ color: '#94A3B8' }}>{(t as any).remarks || '—'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>

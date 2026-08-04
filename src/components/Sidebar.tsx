@@ -4,7 +4,7 @@ import {
   ArrowDownToLine, ArrowUpFromLine, History, AlertTriangle,
   Wrench, ClipboardList, Calendar, Zap, Droplets,
   BarChart3, Users, Settings, ShieldCheck, Tag, Truck,
-  Layers, BellDot, LogOut, Search, Fuel
+  Layers, BellDot, LogOut, Search, Fuel, Clock, Wrench as WrenchIcon
 } from 'lucide-react';
 
 interface NavItem {
@@ -37,6 +37,13 @@ const navItems: NavItem[] = [
       { label: 'Digital Checklist', id: 'checklist', icon: <ClipboardList size={14} /> },
       { label: 'Work Orders', id: 'work-orders', icon: <Wrench size={14} /> },
       { label: 'Maint. Calendar', id: 'calendar', icon: <Calendar size={14} /> },
+      { label: 'Hardware Damage', id: 'hardware-damage', icon: <WrenchIcon size={14} /> },
+    ]
+  },
+  {
+    label: 'Finance', icon: <Clock size={17} />, id: 'finance',
+    children: [
+      { label: 'Payout Schedule', id: 'payout-schedule', icon: <Clock size={14} /> },
     ]
   },
   {

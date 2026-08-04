@@ -50,7 +50,7 @@ export default function StockIn() {
         primaryAction={{ label: 'Save Receipt', onClick: handleSave }}
       />
       <div className="flex-1 overflow-y-auto" style={{ background: '#F8FAFC' }}>
-        <div className="px-6 py-6 max-w-3xl">
+        <div className="px-6 py-6">
           <div className="bg-white rounded-xl border p-6 mb-4" style={{ borderColor: '#E2E8F0' }}>
             <div className="text-sm font-semibold mb-4" style={{ color: '#0F172A' }}>Receipt Information</div>
             <div className="grid grid-cols-2 gap-4">

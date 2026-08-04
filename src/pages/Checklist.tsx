@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CheckCircle2, Package, Camera, PenLine, ChevronRight } from 'lucide-react';
+import { CheckCircle2, Package, Camera, PenLine, ChevronRight, AlertTriangle } from 'lucide-react';
 import Header from '../components/Header';
 import Badge from '../components/Badge';
 import { checklistItems, products } from '../data/mockData';
@@ -59,7 +59,7 @@ export default function Checklist({ onNavigate }: { onNavigate: (p: string) => v
       />
 
       <div className="flex-1 overflow-y-auto" style={{ background: '#F8FAFC' }}>
-        <div className="px-6 py-4 max-w-4xl">
+        <div className="px-6 py-4">
 
           {/* Steps */}
           <div className="flex items-center gap-2 mb-6">
@@ -186,19 +186,27 @@ export default function Checklist({ onNavigate }: { onNavigate: (p: string) => v
               {replacedItems.length > 0 && (
                 <div className="mb-5">
                   <div className="text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#64748B' }}>Auto-detected from Checklist</div>
-                  {replacedItems.map(item => {
-                    const part = products.find(p => p.id === spareParts[item.id]);
-                    return (
-                      <div key={item.id} className="flex items-center gap-3 p-3 rounded-lg mb-2" style={{ background: '#F0FDF4' }}>
-                        <Package size={15} style={{ color: '#16A34A' }} />
-                        <div className="flex-1">
-                          <div className="text-xs font-medium" style={{ color: '#0F172A' }}>{item.component}</div>
-                          <div className="text-xs" style={{ color: '#64748B' }}>{part ? `${part.name} — Stock: ${part.currentStock} → ${part.currentStock - 1}` : 'No matching part found'}</div>
+                      {replacedItems.map(item => {
+                      const part = products.find(p => p.id === spareParts[item.id]);
+                      const hasDamage = part?.hardwareDamage && part.hardwareDamage.length > 0;
+                      return (
+                        <div key={item.id} className="flex items-center gap-3 p-3 rounded-lg mb-2" style={{ background: '#F0FDF4' }}>
+                          <Package size={15} style={{ color: '#16A34A' }} />
+                          <div className="flex-1">
+                            <div className="text-xs font-medium" style={{ color: '#0F172A' }}>{item.component}</div>
+                            <div className="text-xs" style={{ color: '#64748B' }}>{part ? `${part.name} — Stock: ${part.currentStock} → ${part.currentStock - 1}` : 'No matching part found'}</div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            {hasDamage && (
+                              <span className="flex items-center gap-1 text-xs" style={{ color: '#DC2626' }}>
+                                <AlertTriangle size={12} /> Damage
+                              </span>
+                            )}
+                            <Badge label="Will Deduct × 1" variant="success" />
+                          </div>
                         </div>
-                        <Badge label="Will Deduct × 1" variant="success" />
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
               )}
 

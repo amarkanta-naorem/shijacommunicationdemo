@@ -22,6 +22,8 @@ import ReportProductWise from './pages/ReportProductWise';
 import ReportSupplierWise from './pages/ReportSupplierWise';
 import ReportMaintenance from './pages/ReportMaintenance';
 import ReportFuel from './pages/ReportFuel';
+import PayoutSchedule from './pages/PayoutSchedule';
+import HardwareDamage from './pages/HardwareDamage';
 import Header from './components/Header';
 import { Search, MoreHorizontal, ChevronDown } from 'lucide-react';
 import { stockOutTransactions, maintenanceJobs, generators } from './data/mockData';
@@ -284,9 +286,11 @@ export default function App() {
       case 'inventory-history': return <InventoryHistory />;
       case 'low-stock': return <LowStock />;
       case 'calendar': return <MaintenanceCalendar />;
-      case 'diesel': return <FuelStock fuel="diesel" />;
-      case 'sk': return <FuelStock fuel="sk" />;
-      case 'roles': return <RolesPage />;
+       case 'diesel': return <FuelStock fuel="diesel" />;
+       case 'sk': return <FuelStock fuel="sk" />;
+       case 'hardware-damage': return <HardwareDamage onNavigate={setPage} />;
+       case 'payout-schedule': return <PayoutSchedule onNavigate={setPage} />;
+       case 'roles': return <RolesPage />;
       case 'settings': return <Settings />;
       default: return <GenericPage title={page} breadcrumb="Shija Communication" />;
     }
