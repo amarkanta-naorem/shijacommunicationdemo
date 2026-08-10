@@ -3,13 +3,13 @@ import Header from '../components/Header';
 import Badge from '../components/Badge';
 
 const users = [
-  { id: 1, name: 'Rajesh Kumar', email: 'rajesh@company.com', role: 'Store Keeper', dept: 'Stores', status: 'Active', lastLogin: '2025-07-30 09:14' },
-  { id: 2, name: 'Amit Verma', email: 'amit@company.com', role: 'Field Technician', dept: 'Maintenance', status: 'Active', lastLogin: '2025-07-30 10:32' },
-  { id: 3, name: 'Vikram Singh', email: 'vikram@company.com', role: 'Maintenance Engineer', dept: 'Maintenance', status: 'Active', lastLogin: '2025-07-29 16:45' },
-  { id: 4, name: 'Manoj P.', email: 'manoj@company.com', role: 'Field Technician', dept: 'Operations', status: 'Active', lastLogin: '2025-07-29 11:20' },
-  { id: 5, name: 'Suresh M.', email: 'suresh@company.com', role: 'Store Keeper', dept: 'Stores', status: 'Active', lastLogin: '2025-07-28 14:00' },
-  { id: 6, name: 'Priya R.', email: 'priya@company.com', role: 'Operations Manager', dept: 'Management', status: 'Active', lastLogin: '2025-07-30 08:00' },
-  { id: 7, name: 'Arun K.', email: 'arun@company.com', role: 'Administrator', dept: 'IT', status: 'Active', lastLogin: '2025-07-30 07:55' },
+  { id: 1, name: 'Rajesh Kumar', email: 'rajesh@company.com', role: 'Store Keeper', dept: 'Stores', status: 'Active', lastLogin: '2026-07-30 09:14' },
+  { id: 2, name: 'Amit Verma', email: 'amit@company.com', role: 'Field Technician', dept: 'Maintenance', status: 'Active', lastLogin: '2026-07-30 10:32' },
+  { id: 3, name: 'Vikram Singh', email: 'vikram@company.com', role: 'Maintenance Engineer', dept: 'Maintenance', status: 'Active', lastLogin: '2026-07-29 16:45' },
+  { id: 4, name: 'Manoj P.', email: 'manoj@company.com', role: 'Field Technician', dept: 'Operations', status: 'Active', lastLogin: '2026-07-29 11:20' },
+  { id: 5, name: 'Suresh M.', email: 'suresh@company.com', role: 'Store Keeper', dept: 'Stores', status: 'Active', lastLogin: '2026-07-28 14:00' },
+  { id: 6, name: 'Priya R.', email: 'priya@company.com', role: 'Operations Manager', dept: 'Management', status: 'Active', lastLogin: '2026-07-30 08:00' },
+  { id: 7, name: 'Arun K.', email: 'arun@company.com', role: 'Administrator', dept: 'IT', status: 'Active', lastLogin: '2026-07-30 07:55' },
 ];
 
 const roles = [

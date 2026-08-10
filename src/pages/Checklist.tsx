@@ -15,7 +15,7 @@ export default function Checklist({ onNavigate }: { onNavigate: (p: string) => v
   const [spareParts, setSpareParts] = useState<Record<string, string>>({});
   const [saved, setSaved] = useState(false);
   const [step, setStep] = useState<'info' | 'checklist' | 'parts' | 'sign'>('info');
-  const [genInfo, setGenInfo] = useState({ generator: 'DG-G12', site: 'Site A - Block 3', technician: 'Amit Verma', runHours: '2400', date: '2025-07-30' });
+  const [genInfo, setGenInfo] = useState({ generator: 'DG-G12', site: 'Site A - Block 3', technician: 'Amit Verma', runHours: '2400', date: '2026-07-30' });
 
   const setStatus = (id: string, val: string) => {
     setStatuses(prev => ({ ...prev, [id]: val }));
@@ -38,7 +38,7 @@ export default function Checklist({ onNavigate }: { onNavigate: (p: string) => v
       </div>
       <div className="text-lg font-semibold" style={{ color: '#0F172A' }}>Maintenance Completed</div>
       <div className="text-sm text-center max-w-sm" style={{ color: '#64748B' }}>
-        Work order WO-2025-089 has been closed. {replacedItems.length} parts deducted from inventory automatically.
+        Work order WO-2026-089 has been closed. {replacedItems.length} parts deducted from inventory automatically.
       </div>
       <button onClick={() => onNavigate('preventive-maintenance')}
         className="text-sm px-4 py-2 rounded-lg font-medium"
@@ -52,7 +52,7 @@ export default function Checklist({ onNavigate }: { onNavigate: (p: string) => v
     <div className="flex flex-col h-full">
       <Header
         title="Digital Maintenance Checklist"
-        breadcrumbs={[{ label: 'Maintenance' }, { label: 'Checklist' }, { label: 'WO-2025-089' }]}
+        breadcrumbs={[{ label: 'Maintenance' }, { label: 'Checklist' }, { label: 'WO-2026-089' }]}
         badge={{ label: 'Preventive Maintenance', color: '#2563EB' }}
         secondaryActions={[{ label: 'Save Draft', onClick: () => {} }]}
         primaryAction={{ label: 'Complete & Close', onClick: () => setSaved(true) }}

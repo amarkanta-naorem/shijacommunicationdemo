@@ -67,7 +67,7 @@ export default function PayoutSchedule({ onNavigate }: { onNavigate: (p: string)
                 { label: 'Amount (₹)', key: 'amount', type: 'number', placeholder: '0.00', required: true },
                 { label: 'Status', key: 'status', type: 'select', options: STATUS_OPTIONS, required: true },
                 { label: 'Payment Method', key: 'paymentMethod', type: 'text', placeholder: 'e.g. Net Banking', required: true },
-                { label: 'Reference Number', key: 'referenceNumber', type: 'text', placeholder: 'e.g. PO-2025-001', required: true },
+                { label: 'Reference Number', key: 'referenceNumber', type: 'text', placeholder: 'e.g. PO-2026-001', required: true },
               ].map(f => (
                 <div key={f.key}>
                   <label className="text-xs font-medium block mb-1.5" style={{ color: '#475569' }}>

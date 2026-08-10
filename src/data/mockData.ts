@@ -2,36 +2,36 @@ export { products } from './productData';
 export type { Product } from '../types/product';
 
 export const stockInTransactions = [
-  { id: 'SI-2025-001', date: '2025-07-28', product: 'Oil Filter - Mahindra 25kVA', sku: 'OFL-M25', qty: 20, unitPrice: 450, total: 9000, supplier: 'Mahindra', invoiceNo: 'INV-MH-4521', receivedBy: 'Rajesh Kumar', status: 'Completed' },
-  { id: 'SI-2025-002', date: '2025-07-26', product: 'Engine Oil 15W40 - 5L', sku: 'EOL-15W', qty: 50, unitPrice: 320, total: 16000, supplier: 'TMTL', invoiceNo: 'INV-TM-1892', receivedBy: 'Suresh M.', status: 'Completed' },
-  { id: 'SI-2025-003', date: '2025-07-25', product: 'Fuel Filter - TMTL 30kVA', sku: 'FFL-T30', qty: 10, unitPrice: 380, total: 3800, supplier: 'TMTL', invoiceNo: 'INV-TM-1891', receivedBy: 'Rajesh Kumar', status: 'Completed' },
-  { id: 'SI-2025-004', date: '2025-07-22', product: 'Battery 12V 150Ah', sku: 'BAT-12V', qty: 3, unitPrice: 8500, total: 25500, supplier: 'Mahindra', invoiceNo: 'INV-MH-4508', receivedBy: 'Suresh M.', status: 'Completed' },
-  { id: 'SI-2025-005', date: '2025-07-20', product: 'Coolant - 5L', sku: 'CLT-5L', qty: 30, unitPrice: 180, total: 5400, supplier: 'Mahindra', invoiceNo: 'INV-MH-4490', receivedBy: 'Rajesh Kumar', status: 'Completed' },
+  { id: 'SI-2026-001', date: '2026-07-28', product: 'Oil Filter - Mahindra 25kVA', sku: 'OFL-M25', qty: 20, unitPrice: 450, total: 9000, supplier: 'Mahindra', invoiceNo: 'INV-MH-4521', receivedBy: 'Rajesh Kumar', status: 'Completed' },
+  { id: 'SI-2026-002', date: '2026-07-26', product: 'Engine Oil 15W40 - 5L', sku: 'EOL-15W', qty: 50, unitPrice: 320, total: 16000, supplier: 'TMTL', invoiceNo: 'INV-TM-1892', receivedBy: 'Suresh M.', status: 'Completed' },
+  { id: 'SI-2026-003', date: '2026-07-25', product: 'Fuel Filter - TMTL 30kVA', sku: 'FFL-T30', qty: 10, unitPrice: 380, total: 3800, supplier: 'TMTL', invoiceNo: 'INV-TM-1891', receivedBy: 'Rajesh Kumar', status: 'Completed' },
+  { id: 'SI-2026-004', date: '2026-07-22', product: 'Battery 12V 150Ah', sku: 'BAT-12V', qty: 3, unitPrice: 8500, total: 25500, supplier: 'Mahindra', invoiceNo: 'INV-MH-4508', receivedBy: 'Suresh M.', status: 'Completed' },
+  { id: 'SI-2026-005', date: '2026-07-20', product: 'Coolant - 5L', sku: 'CLT-5L', qty: 30, unitPrice: 180, total: 5400, supplier: 'Mahindra', invoiceNo: 'INV-MH-4490', receivedBy: 'Rajesh Kumar', status: 'Completed' },
 ];
 
 export const stockOutTransactions = [
-  { id: 'SO-2025-001', date: '2025-07-29', product: 'Oil Filter - Mahindra 25kVA', sku: 'OFL-M25', qty: 2, unitPrice: 450, total: 900, issuedTo: 'Amit Verma', purpose: 'PM - Gen #G12', department: 'Operations', status: 'Issued' },
-  { id: 'SO-2025-002', date: '2025-07-29', product: 'Engine Oil 15W40 - 5L', sku: 'EOL-15W', qty: 5, unitPrice: 320, total: 1600, issuedTo: 'Vikram Singh', purpose: 'PM - Gen #G08', department: 'Maintenance', status: 'Issued' },
-  { id: 'SO-2025-003', date: '2025-07-27', product: 'Fuel Filter - TMTL 30kVA', sku: 'FFL-T30', qty: 3, unitPrice: 380, total: 1140, issuedTo: 'Manoj P.', purpose: 'CM - Gen #G03', department: 'Maintenance', status: 'Issued' },
-  { id: 'SO-2025-004', date: '2025-07-26', product: 'V-Belt Set - 3PK885', sku: 'VBL-3PK', qty: 1, unitPrice: 750, total: 750, issuedTo: 'Amit Verma', purpose: 'CM - Gen #G15', department: 'Operations', status: 'Issued' },
-  { id: 'SO-2025-005', date: '2025-07-24', product: 'Battery 12V 150Ah', sku: 'BAT-12V', qty: 1, unitPrice: 8500, total: 8500, issuedTo: 'Suresh M.', purpose: 'CM - Emergency', department: 'Maintenance', status: 'Issued' },
+  { id: 'SO-2026-001', date: '2026-07-29', product: 'Oil Filter - Mahindra 25kVA', sku: 'OFL-M25', qty: 2, unitPrice: 450, total: 900, issuedTo: 'Amit Verma', purpose: 'PM - Gen #G12', department: 'Operations', status: 'Issued' },
+  { id: 'SO-2026-002', date: '2026-07-29', product: 'Engine Oil 15W40 - 5L', sku: 'EOL-15W', qty: 5, unitPrice: 320, total: 1600, issuedTo: 'Vikram Singh', purpose: 'PM - Gen #G08', department: 'Maintenance', status: 'Issued' },
+  { id: 'SO-2026-003', date: '2026-07-27', product: 'Fuel Filter - TMTL 30kVA', sku: 'FFL-T30', qty: 3, unitPrice: 380, total: 1140, issuedTo: 'Manoj P.', purpose: 'CM - Gen #G03', department: 'Maintenance', status: 'Issued' },
+  { id: 'SO-2026-004', date: '2026-07-26', product: 'V-Belt Set - 3PK885', sku: 'VBL-3PK', qty: 1, unitPrice: 750, total: 750, issuedTo: 'Amit Verma', purpose: 'CM - Gen #G15', department: 'Operations', status: 'Issued' },
+  { id: 'SO-2026-005', date: '2026-07-24', product: 'Battery 12V 150Ah', sku: 'BAT-12V', qty: 1, unitPrice: 8500, total: 8500, issuedTo: 'Suresh M.', purpose: 'CM - Emergency', department: 'Maintenance', status: 'Issued' },
 ];
 
 export const maintenanceJobs = [
-  { id: 'WO-2025-089', type: 'PM', generator: 'DG-G12 (Mahindra 25kVA)', site: 'Site A - Block 3', technician: 'Amit Verma', scheduledDate: '2025-07-30', status: 'Scheduled', priority: 'Normal', runningHours: 2400 },
-  { id: 'WO-2025-088', type: 'CM', generator: 'DG-G08 (TMTL 30kVA)', site: 'Site B - Block 1', technician: 'Vikram Singh', scheduledDate: '2025-07-29', status: 'In Progress', priority: 'High', runningHours: 3100, complaint: 'Overheating - Coolant level low' },
-  { id: 'WO-2025-087', type: 'PM', generator: 'DG-G03 (Mahindra 15kVA)', site: 'Site A - Block 1', technician: 'Manoj P.', scheduledDate: '2025-07-28', status: 'Completed', priority: 'Normal', runningHours: 1800 },
-  { id: 'WO-2025-086', type: 'CM', generator: 'DG-G15 (TMTL 25kVA)', site: 'Site C - Block 2', technician: 'Amit Verma', scheduledDate: '2025-07-27', status: 'Completed', priority: 'Critical', runningHours: 4200, complaint: 'Starting failure - Belt broken' },
-  { id: 'WO-2025-085', type: 'PM', generator: 'DG-G21 (Mahindra 30kVA)', site: 'Site B - Block 3', technician: 'Vikram Singh', scheduledDate: '2025-07-25', status: 'Completed', priority: 'Normal', runningHours: 600 },
-  { id: 'WO-2025-084', type: 'CM', generator: 'DG-G05 (TMTL 15kVA)', site: 'Site A - Block 2', technician: 'Manoj P.', scheduledDate: '2025-07-31', status: 'Scheduled', priority: 'High', runningHours: 2900, complaint: 'Oil pressure warning light' },
+  { id: 'WO-2026-089', type: 'PM', generator: 'DG-G12 (Mahindra 25kVA)', site: 'Site A - Block 3', technician: 'Amit Verma', scheduledDate: '2026-07-30', status: 'Scheduled', priority: 'Normal', runningHours: 2400 },
+  { id: 'WO-2026-088', type: 'CM', generator: 'DG-G08 (TMTL 30kVA)', site: 'Site B - Block 1', technician: 'Vikram Singh', scheduledDate: '2026-07-29', status: 'In Progress', priority: 'High', runningHours: 3100, complaint: 'Overheating - Coolant level low' },
+  { id: 'WO-2026-087', type: 'PM', generator: 'DG-G03 (Mahindra 15kVA)', site: 'Site A - Block 1', technician: 'Manoj P.', scheduledDate: '2026-07-28', status: 'Completed', priority: 'Normal', runningHours: 1800 },
+  { id: 'WO-2026-086', type: 'CM', generator: 'DG-G15 (TMTL 25kVA)', site: 'Site C - Block 2', technician: 'Amit Verma', scheduledDate: '2026-07-27', status: 'Completed', priority: 'Critical', runningHours: 4200, complaint: 'Starting failure - Belt broken' },
+  { id: 'WO-2026-085', type: 'PM', generator: 'DG-G21 (Mahindra 30kVA)', site: 'Site B - Block 3', technician: 'Vikram Singh', scheduledDate: '2026-07-25', status: 'Completed', priority: 'Normal', runningHours: 600 },
+  { id: 'WO-2026-084', type: 'CM', generator: 'DG-G05 (TMTL 15kVA)', site: 'Site A - Block 2', technician: 'Manoj P.', scheduledDate: '2026-07-31', status: 'Scheduled', priority: 'High', runningHours: 2900, complaint: 'Oil pressure warning light' },
 ];
 
 export const fuelTransactions = [
-  { id: 'FI-2025-042', type: 'in', fuelType: 'Diesel', date: '2025-07-28', supplier: 'Bharat Petroleum', invoiceQty: 1000, actualQty: 995, lossQty: 5, tankBefore: 120, tankAfter: 1115, receivedBy: 'Rajesh Kumar', invoiceNo: 'BP-INV-8821', remarks: 'Regular monthly supply' },
-  { id: 'FO-2025-061', type: 'out', fuelType: 'Diesel', date: '2025-07-29', qty: 50, issuedTo: 'Amit Verma', department: 'Maintenance', machine: 'DG-G12', stockBefore: 1115, stockAfter: 1065, remarks: 'PM operation' },
-  { id: 'FO-2025-062', type: 'out', fuelType: 'Diesel', date: '2025-07-29', qty: 30, issuedTo: 'Vikram Singh', department: 'Maintenance', machine: 'DG-G08', stockBefore: 1065, stockAfter: 1035, remarks: 'Emergency CM run' },
-  { id: 'FI-2025-041', type: 'in', fuelType: 'S/K', date: '2025-07-25', supplier: 'Indian Oil', invoiceQty: 200, actualQty: 198, lossQty: 2, tankBefore: 45, tankAfter: 243, receivedBy: 'Suresh M.', invoiceNo: 'IO-INV-3341', remarks: '' },
-  { id: 'FO-2025-060', type: 'out', fuelType: 'S/K', date: '2025-07-26', qty: 20, issuedTo: 'Manoj P.', department: 'Operations', machine: 'Vehicle-04', stockBefore: 243, stockAfter: 223, remarks: '' },
+  { id: 'FI-2026-042', type: 'in', fuelType: 'Diesel', date: '2026-07-28', supplier: 'Bharat Petroleum', invoiceQty: 1000, actualQty: 995, lossQty: 5, tankBefore: 120, tankAfter: 1115, receivedBy: 'Rajesh Kumar', invoiceNo: 'BP-INV-8821', remarks: 'Regular monthly supply' },
+  { id: 'FO-2026-061', type: 'out', fuelType: 'Diesel', date: '2026-07-29', qty: 50, issuedTo: 'Amit Verma', department: 'Maintenance', machine: 'DG-G12', stockBefore: 1115, stockAfter: 1065, remarks: 'PM operation' },
+  { id: 'FO-2026-062', type: 'out', fuelType: 'Diesel', date: '2026-07-29', qty: 30, issuedTo: 'Vikram Singh', department: 'Maintenance', machine: 'DG-G08', stockBefore: 1065, stockAfter: 1035, remarks: 'Emergency CM run' },
+  { id: 'FI-2026-041', type: 'in', fuelType: 'S/K', date: '2026-07-25', supplier: 'Indian Oil', invoiceQty: 200, actualQty: 198, lossQty: 2, tankBefore: 45, tankAfter: 243, receivedBy: 'Suresh M.', invoiceNo: 'IO-INV-3341', remarks: '' },
+  { id: 'FO-2026-060', type: 'out', fuelType: 'S/K', date: '2026-07-26', qty: 20, issuedTo: 'Manoj P.', department: 'Operations', machine: 'Vehicle-04', stockBefore: 243, stockAfter: 223, remarks: '' },
 ];
 
 export const inventoryTrend = [
@@ -86,17 +86,17 @@ export const alerts = [
   { id: 2, type: 'low_stock', severity: 'danger', message: 'Alternator Belt (ALT-BLT) critically low — 1 unit remaining', time: '4h ago', product: 'Alternator Belt' },
   { id: 3, type: 'maintenance_due', severity: 'warning', message: 'DG-G12 PM scheduled for today — not yet started', time: '6h ago', generator: 'DG-G12' },
   { id: 4, type: 'fuel_threshold', severity: 'info', message: 'Diesel stock 1,035L — approaching reorder threshold', time: '1d ago' },
-  { id: 5, type: 'cm_assigned', severity: 'info', message: 'WO-2025-084 assigned to Manoj P. — Oil pressure warning', time: '1d ago' },
+  { id: 5, type: 'cm_assigned', severity: 'info', message: 'WO-2026-084 assigned to Manoj P. — Oil pressure warning', time: '1d ago' },
 ];
 
 export const generators = [
-  { id: 'DG-G01', model: 'Mahindra 15kVA', site: 'Site A - Block 1', status: 'Running', lastPM: '2025-06-15', nextPM: '2025-09-15', runHours: 2240 },
-  { id: 'DG-G03', model: 'Mahindra 15kVA', site: 'Site A - Block 1', status: 'Running', lastPM: '2025-07-28', nextPM: '2025-10-28', runHours: 1800 },
-  { id: 'DG-G05', model: 'TMTL 15kVA', site: 'Site A - Block 2', status: 'Under Maintenance', lastPM: '2025-04-10', nextPM: '2025-07-10', runHours: 2900 },
-  { id: 'DG-G08', model: 'TMTL 30kVA', site: 'Site B - Block 1', status: 'Under Maintenance', lastPM: '2025-05-20', nextPM: '2025-08-20', runHours: 3100 },
-  { id: 'DG-G12', model: 'Mahindra 25kVA', site: 'Site A - Block 3', status: 'Running', lastPM: '2025-04-30', nextPM: '2025-07-30', runHours: 2400 },
-  { id: 'DG-G15', model: 'TMTL 25kVA', site: 'Site C - Block 2', status: 'Running', lastPM: '2025-07-27', nextPM: '2025-10-27', runHours: 4200 },
-  { id: 'DG-G21', model: 'Mahindra 30kVA', site: 'Site B - Block 3', status: 'Running', lastPM: '2025-07-25', nextPM: '2025-10-25', runHours: 600 },
+  { id: 'DG-G01', model: 'Mahindra 15kVA', site: 'Site A - Block 1', status: 'Running', lastPM: '2026-06-15', nextPM: '2026-09-15', runHours: 2240 },
+  { id: 'DG-G03', model: 'Mahindra 15kVA', site: 'Site A - Block 1', status: 'Running', lastPM: '2026-07-28', nextPM: '2026-10-28', runHours: 1800 },
+  { id: 'DG-G05', model: 'TMTL 15kVA', site: 'Site A - Block 2', status: 'Under Maintenance', lastPM: '2026-04-10', nextPM: '2026-07-10', runHours: 2900 },
+  { id: 'DG-G08', model: 'TMTL 30kVA', site: 'Site B - Block 1', status: 'Under Maintenance', lastPM: '2026-05-20', nextPM: '2026-08-20', runHours: 3100 },
+  { id: 'DG-G12', model: 'Mahindra 25kVA', site: 'Site A - Block 3', status: 'Running', lastPM: '2026-04-30', nextPM: '2026-07-30', runHours: 2400 },
+  { id: 'DG-G15', model: 'TMTL 25kVA', site: 'Site C - Block 2', status: 'Running', lastPM: '2026-07-27', nextPM: '2026-10-27', runHours: 4200 },
+  { id: 'DG-G21', model: 'Mahindra 30kVA', site: 'Site B - Block 3', status: 'Running', lastPM: '2026-07-25', nextPM: '2026-10-25', runHours: 600 },
 ];
 
 // ---------------------------------------------------------------------------
@@ -112,10 +112,10 @@ export const categories = [
 // Suppliers
 // ---------------------------------------------------------------------------
 export const suppliers = [
-  { id: 'SUP-001', name: 'Mahindra', type: 'Equipment', contactPerson: 'Rakesh Sharma', phone: '+91 98765 43210', email: 'sales@mahindra.com', location: 'Mumbai, MH', itemsSupplied: 5, totalValue: 148000, status: 'Active', leadTime: '5–7 days', lastOrder: '2025-07-28' },
-  { id: 'SUP-002', name: 'TMTL', type: 'Equipment', contactPerson: 'Kavita Rao', phone: '+91 91234 56780', email: 'orders@tmtl.com', location: 'Pune, MH', itemsSupplied: 5, totalValue: 91200, status: 'Active', leadTime: '3–5 days', lastOrder: '2025-07-26' },
-  { id: 'SUP-003', name: 'Bharat Petroleum', type: 'Fuel', contactPerson: 'Santosh Iyer', phone: '+91 90000 12345', email: 'b2b@bharatpetroleum.in', location: 'Guwahati, AS', itemsSupplied: 1, totalValue: 90000, status: 'Active', leadTime: 'Dispatch 24h', lastOrder: '2025-07-28' },
-  { id: 'SUP-004', name: 'Indian Oil', type: 'Fuel', contactPerson: 'Dipankar Bora', phone: '+91 98765 00112', email: 'dms@iocl.co.in', location: 'Silchar, AS', itemsSupplied: 1, totalValue: 14000, status: 'Active', leadTime: 'Dispatch 24h', lastOrder: '2025-07-25' },
+  { id: 'SUP-001', name: 'Mahindra', type: 'Equipment', contactPerson: 'Rakesh Sharma', phone: '+91 98765 43210', email: 'sales@mahindra.com', location: 'Mumbai, MH', itemsSupplied: 5, totalValue: 148000, status: 'Active', leadTime: '5–7 days', lastOrder: '2026-07-28' },
+  { id: 'SUP-002', name: 'TMTL', type: 'Equipment', contactPerson: 'Kavita Rao', phone: '+91 91234 56780', email: 'orders@tmtl.com', location: 'Pune, MH', itemsSupplied: 5, totalValue: 91200, status: 'Active', leadTime: '3–5 days', lastOrder: '2026-07-26' },
+  { id: 'SUP-003', name: 'Bharat Petroleum', type: 'Fuel', contactPerson: 'Santosh Iyer', phone: '+91 90000 12345', email: 'b2b@bharatpetroleum.in', location: 'Guwahati, AS', itemsSupplied: 1, totalValue: 90000, status: 'Active', leadTime: 'Dispatch 24h', lastOrder: '2026-07-28' },
+  { id: 'SUP-004', name: 'Indian Oil', type: 'Fuel', contactPerson: 'Dipankar Bora', phone: '+91 98765 00112', email: 'dms@iocl.co.in', location: 'Silchar, AS', itemsSupplied: 1, totalValue: 14000, status: 'Active', leadTime: 'Dispatch 24h', lastOrder: '2026-07-25' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -130,8 +130,8 @@ export const inventoryHistory = [
 // Fuel stock tanks
 // ---------------------------------------------------------------------------
 export const fuelStock = [
-  { id: 'diesel', name: 'Diesel', tankCapacity: 2000, currentStock: 1035, reorderLevel: 800, criticalLevel: 400, unit: 'L', status: 'Normal', color: '#7C3AED', bg: '#F3E8FF', lastUpdated: '2025-07-29 02:20 PM' },
-  { id: 'sk', name: 'S/K', tankCapacity: 500, currentStock: 223, reorderLevel: 100, criticalLevel: 50, unit: 'L', status: 'Normal', color: '#0891B2', bg: '#ECFEFF', lastUpdated: '2025-07-26 11:00 AM' },
+  { id: 'diesel', name: 'Diesel', tankCapacity: 2000, currentStock: 1035, reorderLevel: 800, criticalLevel: 400, unit: 'L', status: 'Normal', color: '#7C3AED', bg: '#F3E8FF', lastUpdated: '2026-07-29 02:20 PM' },
+  { id: 'sk', name: 'S/K', tankCapacity: 500, currentStock: 223, reorderLevel: 100, criticalLevel: 50, unit: 'L', status: 'Normal', color: '#0891B2', bg: '#ECFEFF', lastUpdated: '2026-07-26 11:00 AM' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -139,12 +139,12 @@ export const fuelStock = [
 // ---------------------------------------------------------------------------
 export const calendarEvents = [
   ...maintenanceJobs.map(j => ({ id: j.id, date: j.scheduledDate, title: j.generator.split('(')[0].trim(), generator: j.generator, type: j.type, status: j.status, site: j.site, technician: j.technician })),
-  { id: 'WO-2025-083', date: '2025-07-22', title: 'DG-G18', generator: 'DG-G18 (Mahindra 25kVA)', type: 'PM', status: 'Completed', site: 'Site C - Block 1', technician: 'Manoj P.' },
-  { id: 'WO-2025-082', date: '2025-07-18', title: 'DG-G02', generator: 'DG-G02 (TMTL 15kVA)', type: 'CM', status: 'Completed', site: 'Site A - Block 2', technician: 'Vikram Singh' },
-  { id: 'WO-2025-081', date: '2025-07-14', title: 'DG-G10', generator: 'DG-G10 (Mahindra 30kVA)', type: 'PM', status: 'Completed', site: 'Site B - Block 2', technician: 'Amit Verma' },
-  { id: 'WO-2025-080', date: '2025-07-09', title: 'DG-G07', generator: 'DG-G07 (TMTL 20kVA)', type: 'PM', status: 'Completed', site: 'Site A - Block 3', technician: 'Manoj P.' },
-  { id: 'WO-2025-079', date: '2025-07-06', title: 'DG-G14', generator: 'DG-G14 (Mahindra 15kVA)', type: 'CM', status: 'Completed', site: 'Site C - Block 2', technician: 'Vikram Singh' },
-  { id: 'WO-2025-078', date: '2025-07-02', title: 'DG-G04', generator: 'DG-G04 (TMTL 25kVA)', type: 'PM', status: 'Completed', site: 'Site B - Block 1', technician: 'Amit Verma' },
+  { id: 'WO-2026-083', date: '2026-07-22', title: 'DG-G18', generator: 'DG-G18 (Mahindra 25kVA)', type: 'PM', status: 'Completed', site: 'Site C - Block 1', technician: 'Manoj P.' },
+  { id: 'WO-2026-082', date: '2026-07-18', title: 'DG-G02', generator: 'DG-G02 (TMTL 15kVA)', type: 'CM', status: 'Completed', site: 'Site A - Block 2', technician: 'Vikram Singh' },
+  { id: 'WO-2026-081', date: '2026-07-14', title: 'DG-G10', generator: 'DG-G10 (Mahindra 30kVA)', type: 'PM', status: 'Completed', site: 'Site B - Block 2', technician: 'Amit Verma' },
+  { id: 'WO-2026-080', date: '2026-07-09', title: 'DG-G07', generator: 'DG-G07 (TMTL 20kVA)', type: 'PM', status: 'Completed', site: 'Site A - Block 3', technician: 'Manoj P.' },
+  { id: 'WO-2026-079', date: '2026-07-06', title: 'DG-G14', generator: 'DG-G14 (Mahindra 15kVA)', type: 'CM', status: 'Completed', site: 'Site C - Block 2', technician: 'Vikram Singh' },
+  { id: 'WO-2026-078', date: '2026-07-02', title: 'DG-G04', generator: 'DG-G04 (TMTL 25kVA)', type: 'PM', status: 'Completed', site: 'Site B - Block 1', technician: 'Amit Verma' },
 ];
 
 // ---------------------------------------------------------------------------

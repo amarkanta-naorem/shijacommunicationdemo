@@ -8,7 +8,7 @@ const TABS = ['Overview', 'Inventory', 'Maintenance', 'Fuel'];
 
 export default function Reports() {
   const [tab, setTab] = useState('Overview');
-  const [dateRange, setDateRange] = useState({ from: '2025-07-01', to: '2025-07-31' });
+  const [dateRange, setDateRange] = useState({ from: '2026-07-01', to: '2026-07-31' });
 
   return (
     <div className="flex flex-col h-full">

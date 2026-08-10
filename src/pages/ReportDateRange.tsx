@@ -5,8 +5,8 @@ import Header from '../components/Header';
 import { inventoryHistory } from '../data/mockData';
 
 export default function ReportDateRange() {
-  const [from, setFrom] = useState('2025-07-01');
-  const [to, setTo] = useState('2025-07-31');
+  const [from, setFrom] = useState('2026-07-01');
+  const [to, setTo] = useState('2026-07-31');
 
   const txns = inventoryHistory.filter(t => t.date >= from && t.date <= to);
   const totalIn = txns.filter(t => t.type === 'in').reduce((s, t) => s + t.total, 0);

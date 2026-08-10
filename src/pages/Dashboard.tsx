@@ -287,11 +287,11 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
             </div>
             <div className="divide-y" style={{ borderColor: '#F8FAFC' }}>
               {[
-                { id: 'SI-2025-001', type: 'in', label: 'Oil Filter × 20', sub: 'Mahindra · INV-MH-4521', value: '+₹9,000', time: '09:14 AM' },
-                { id: 'SO-2025-001', type: 'out', label: 'Oil Filter × 2', sub: 'To Amit Verma · PM-G12', value: '-₹900', time: '10:32 AM' },
-                { id: 'SO-2025-002', type: 'out', label: 'Engine Oil × 5L', sub: 'To Vikram Singh · PM-G08', value: '-₹1,600', time: '11:15 AM' },
-                { id: 'FO-2025-061', type: 'fuel', label: 'Diesel Out 50L', sub: 'DG-G12 · Amit Verma', value: '50 L', time: '12:00 PM' },
-                { id: 'FO-2025-062', type: 'fuel', label: 'Diesel Out 30L', sub: 'DG-G08 · Vikram Singh', value: '30 L', time: '02:20 PM' },
+                { id: 'SI-2026-001', type: 'in', label: 'Oil Filter × 20', sub: 'Mahindra · INV-MH-4521', value: '+₹9,000', time: '09:14 AM' },
+                { id: 'SO-2026-001', type: 'out', label: 'Oil Filter × 2', sub: 'To Amit Verma · PM-G12', value: '-₹900', time: '10:32 AM' },
+                { id: 'SO-2026-002', type: 'out', label: 'Engine Oil × 5L', sub: 'To Vikram Singh · PM-G08', value: '-₹1,600', time: '11:15 AM' },
+                { id: 'FO-2026-061', type: 'fuel', label: 'Diesel Out 50L', sub: 'DG-G12 · Amit Verma', value: '50 L', time: '12:00 PM' },
+                { id: 'FO-2026-062', type: 'fuel', label: 'Diesel Out 30L', sub: 'DG-G08 · Vikram Singh', value: '30 L', time: '02:20 PM' },
               ].map(t => (
                 <div key={t.id} className="flex items-center gap-3 px-5 py-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"

@@ -480,7 +480,7 @@ export default function Products({ onNavigate }: { onNavigate: (p: string) => vo
                   value={formState.payoutMethod || ''} onChange={e => set('payoutMethod', e.target.value)} />
               </Field>
               <Field label="Reference Number">
-                <input className={inputCls} style={{ borderColor: '#E2E8F0' }} placeholder="e.g. PO-2025-001"
+                <input className={inputCls} style={{ borderColor: '#E2E8F0' }} placeholder="e.g. PO-2026-001"
                   value={formState.payoutRef || ''} onChange={e => set('payoutRef', e.target.value)} />
               </Field>
             </div>

@@ -55,7 +55,7 @@ function StockOut() {
             {[
               { label: 'Product', type: 'search', placeholder: 'Select Product' },
               { label: 'Issued To', type: 'text', placeholder: 'Full name' },
-              { label: 'Department', type: 'text', placeholder: 'e.g. Maintenance' },
+              { label: 'Site Location', type: 'text', placeholder: 'e.g. Maintenance' },
             ].map(f => (
               <div key={f.label}>
                 <label className="text-xs font-medium block mb-1.5" style={{ color: '#475569' }}>{f.label}</label>
@@ -64,7 +64,7 @@ function StockOut() {
               </div>
             ))}
             <div>
-              <label className="text-xs font-medium block mb-1.5" style={{ color: '#475569' }}>Work Order</label>
+              <label className="text-xs font-medium block mb-1.5" style={{ color: '#475569' }}>Maintenance Type</label>
               <div className="relative w-full">
                 <select
                   value={workOrder}
@@ -72,7 +72,7 @@ function StockOut() {
                   className="relative w-full appearance-none text-sm border rounded-lg px-3 py-2 pr-10 outline-none"
                   style={{ borderColor: "#E2E8F0", background: "#fff" }}
                 >
-                  <option value="">Select Work Order</option>
+                  <option value="">Select Maintenance Type</option>
 
                   <optgroup label="Preventive (PM)">
                     {pmWorkOrders.map((j) => (
@@ -227,7 +227,7 @@ function Generators() {
                   <div><span style={{ color: '#94A3B8' }}>Run Hours</span><br /><span className="font-semibold font-mono" style={{ color: '#0F172A' }}>{g.runHours.toLocaleString()} h</span></div>
                   <div><span style={{ color: '#94A3B8' }}>Last PM</span><br /><span className="font-semibold" style={{ color: '#0F172A' }}>{g.lastPM}</span></div>
                   <div className="col-span-2"><span style={{ color: '#94A3B8' }}>Next PM Due</span><br />
-                    <span className="font-semibold" style={{ color: g.nextPM <= '2025-07-31' ? '#DC2626' : '#16A34A' }}>{g.nextPM}</span>
+                    <span className="font-semibold" style={{ color: g.nextPM <= '2026-07-31' ? '#DC2626' : '#16A34A' }}>{g.nextPM}</span>
                   </div>
                 </div>
               </div>

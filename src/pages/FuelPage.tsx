@@ -91,7 +91,7 @@ const FuelOutForm = ({ onSave }: { onSave: () => void }) => {
     { label: 'Date', type: 'date' },
     { label: 'Time', type: 'time' },
     { label: 'Person Receiving', type: 'text', placeholder: 'Full name' },
-    { label: 'Department', type: 'text', placeholder: 'e.g. Maintenance' },
+    { label: 'Site', type: 'text', placeholder: 'e.g. Maintenance' },
     { label: 'Machine / Vehicle / Generator', type: 'text', placeholder: 'e.g. DG-G12 or Vehicle-04' },
     { label: 'Remarks', type: 'text', placeholder: 'Optional' },
   ];
